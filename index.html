@@ -1,0 +1,2378 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WL Bio-Control System</title>
+
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f8fb;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #7cc6e6;
+  width: 0%;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  margin: 20px 0;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-top: 10px;
+  background: #7cc6e6;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.highlight {
+  background: #eaf6fb;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.wl-sim {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f8fb;
+  padding: 20px;
+  text-align: center;
+  border-radius: 16px;
+  margin: 30px 0;
+}
+
+</style>
+
+<script>
+function updateProgress(percent) {
+  document.getElementById("progress").style.width = percent + "%";
+}
+
+function simulasi3() {
+  alert("Masalah kecil → tidak terdeteksi → jadi masalah besar.");
+}
+
+// LOCAL STORAGE CHECKLIST
+function saveChecklist() {
+  let checks = document.querySelectorAll("input[type=checkbox]");
+  checks.forEach((c, i) => {
+    localStorage.setItem("check_" + i, c.checked);
+  });
+}
+
+function loadChecklist() {
+  let checks = document.querySelectorAll("input[type=checkbox]");
+  checks.forEach((c, i) => {
+    let val = localStorage.getItem("check_" + i);
+    if (val === "true") c.checked = true;
+  });
+}
+
+window.onload = loadChecklist;
+</script>
+
+</head>
+
+<body>
+
+<div class="header">
+  <b>WL Bio-Control System</b>
+  <div class="progress-bar" id="progress"></div>
+</div>
+
+<div class="container">
+
+<!-- PEMBUKA -->
+<div class="card" onmouseover="updateProgress(10)">
+  <h1>WL BIO-CONTROL SYSTEM</h1>
+  <p><i>Blueprint Kandang Ayam Cerdas</i></p>
+  <a class="button" href="#bab1">Mulai</a>
+</div>
+
+<!-- BAB 1 -->
+<div class="card" id="bab1">
+
+<h2>BAB 1: Realita Peternak Hari Ini</h2>
+<p><i>“Bukan soal malas atau tidak mampu, 
+tapi sistemnya memang belum bantu.”</i></p>
+
+<!-- PEMBUKA -->
+<h3>🪝 “1.1 Bertaruh dengan Feeling" </h3>
+
+<p>
+Pernah nggak… kamu merasa sudah melakukan semuanya dengan benar?
+</p>
+
+<ul>
+<li>Kayaknya hari ini panas ya…</li>
+<li>Kayaknya ayam agak lesu…</li>
+<li>Kayaknya konsumsi pakan turun…</li>
+</ul>
+
+<p>
+Masalahnya… semua “kayaknya”.
+
+</p>
+
+<p>
+Peternak itu sering dipaksa jadi “peramal cuaca + dokter + teknisi” dalam satu waktu. Padahal alatnya? Cuma mata, tangan, dan feeling.
+</p>
+<p>Bayangin Anda nyetir mobil tanpa speedometer.
+Jalan terus… tapi gak tahu seberapa cepat.
+Gak tahu mesin lagi panas atau normal.
+Yang penting jalan.</p>
+
+<div class="highlight">
+Nah, itulah yang terjadi di banyak kandang hari ini.
+</div>
+<p>Keputusan penting—yang dampaknya jutaan rupiah—sering diambil dari insting.</p>
+<p><b>Sedikit jujur yuk…</b>
+Berapa kali Anda merasa:</p>
+<ul>
+<li> Ayam tiba-tiba drop tanpa sebab jelas?</li>
+<li> Pakan boros tapi bobot gak naik signifikan?</li>
+<li> Baru sadar masalah setelah kerugian terjadi?</li></ul>
+<p>Kalau pernah… Anda tidak sendirian.</p>
+
+<h3>1.2 Capek Fisik, Capek Pikiran</h3>
+
+<p>
+Jadi peternak itu bukan cuma kerja… tapi juga<b> jaga terus.</b>
+</p>
+
+<p>
+Pagi cek kandang.<br>
+Siang cek lagi.<br>
+Sore balik lagi.<br>
+Malam kadang kepikiran:<br>
+“Jangan-jangan suhu naik…”<br>
+“Air cukup gak ya…”<br>
+</p>
+
+<p>
+Rasanya seperti jadi <b>satpam 24 jam di kandang sendiri.</b>
+Capeknya bukan cuma di badan… tapi di kepala.
+</p>
+<p>Karena yang dijaga itu bukan benda mati.
+Tapi makhluk hidup yang sensitif.</p>
+<p>Dan lucunya, walaupun sudah bolak-balik kandang:</p>
+
+<ul>
+<li>Tetap aja ada yang lolos dari perhatian</li>
+<li>Tetap aja ada yang kejadian “tiba-tiba</li></ul>
+<p>Seolah-olah kita sudah kerja keras…
+tapi sistemnya belum bantu kerja kita.</p>
+<p>Bayangin kalau kandang bisa “ngomong”:</p>
+<p>"Bos, suhu naik nih.”<br>
+“Bos, kelembaban terlalu tinggi.”<br>
+“Bos, ada yang gak normal di sini.”<br>
+</p>
+
+<p>Pasti hidup jauh lebih tenang.
+</p>
+
+<!-- CERITA -->
+<h3>🐔 1.3 Masalah Datang Terlambat</h3>
+
+<p>
+Ini bagian yang paling “nyesek”.
+
+Masalah di kandang itu jarang datang dengan suara keras.
+Dia datang pelan… diam… lalu tiba-tiba besar.
+
+</p>
+<p>
+Contoh yang paling sering
+</p>
+
+<ul>
+<li>Kelembaban berubah</li>
+<li>Suhu naik sedikit demi sedikit</li>
+<li>Ayam mulai stres ringan</li>
+</ul>
+<p>
+Tapi karena tidak terlihat jelas… kita anggap aman.
+Sampai akhirnya…?
+</p>
+
+<p>
+Ayam mulai drop<br>
+Nafsu makan turun<br>
+Bahkan ada yang mati<br>
+</p>
+<p>
+Masalahnya bukan karena Anda tidak peduli.
+Tapi karena<b> tidak ada yang kasih sinyal lebih awal.</b></p>
+<div class="highlight">
+Nah… kandang ayam juga sama.
+</div>
+
+<!-- KONSEP -->
+<h3>🧠 Konsep Inti: Kandang Itu Sistem</h3>
+
+<p>
+Kandang bukan sekadar tempat ayam hidup.
+</p>
+
+<p>
+Di dalamnya ada sistem yang saling terhubung:
+</p>
+
+<ul>
+<li><b>Nutrisi</b> → bahan bakar</li>
+<li><b>Mikroklimat</b> → lingkungan (suhu & udara)</li>
+<li><b>Ritme biologis</b> → jam tubuh ayam</li>
+<li><b>Manajemen</b> → cara kita mengatur semuanya</li>
+</ul>
+
+<p>
+Masalahnya…
+</p>
+
+<p>
+Banyak peternak fokus ke satu hal saja.
+</p>
+
+<p>
+Misalnya:
+</p>
+
+<div class="highlight">
+“Pakan sudah bagus kok…”
+</div>
+
+<p>
+Tapi lupa:
+</p>
+
+<ul>
+<li>Suhu terlalu panas</li>
+<li>Ventilasi buruk</li>
+<li>Cahaya tidak teratur</li>
+</ul>
+
+<p>
+Akhirnya?
+</p>
+
+<p><b>Hasil tetap tidak maksimal.</b></p>
+
+
+
+<!-- HUMOR -->
+<h3>😄 Sedikit Realita (Biar Ngena)</h3>
+
+<p>
+Kadang kita berharap ayam tumbuh maksimal…
+</p>
+
+<p>
+di kandang yang bahkan kita sendiri nggak betah kalau disuruh tinggal di situ 😅
+</p>
+
+<p>
+Panas. Pengap. Nggak jelas siang-malamnya.
+</p>
+
+<div class="highlight">
+Ayamnya mungkin mikir:  
+“Ini lagi siang… atau lagi ujian hidup ya?” 😂
+</div>
+
+
+
+<!-- INTERAKTIF -->
+<div class="card">
+<h3>🧠 Refleksi Cepat</h3>
+
+<p>Jujur jawab dalam hati:</p>
+
+<ul>
+<li>Apakah saya hanya fokus ke pakan?</li>
+<li>Apakah saya benar-benar tahu suhu kandang?</li>
+<li>Apakah saya pernah mengatur ritme cahaya?</li>
+</ul>
+
+<button class="button" onclick="alert('Insight: Kalau kamu belum yakin jawabannya, berarti kamu belum melihat kandang sebagai sistem.')">
+Klik untuk Insight
+</button>
+</div>
+
+
+
+<!-- INSIGHT -->
+<h3>💡 Insight Penting</h3>
+
+<div class="highlight">
+Perbedaan terbesar bukan di jumlah ayam…  
+tapi di cara berpikir peternaknya.
+</div>
+
+<p>
+Peternak biasa:
+👉 melihat kandang sebagai tempat
+</p>
+
+<p>
+Peternak berkembang:
+👉 melihat kandang sebagai sistem
+</p>
+
+
+
+<!-- RINGKASAN -->
+<h3>📝 Ringkasan Bab 1</h3>
+
+<ul>
+<li>Kandang bukan tempat, tapi sistem</li>
+<li>Semua elemen saling terhubung</li>
+<li>Gangguan kecil bisa berdampak besar</li>
+<li>Masalah utama: cara berpikir parsial</li>
+</ul>
+
+
+
+<!-- LATIHAN -->
+<h3>✍️ Latihan Singkat</h3>
+
+<p>Coba tulis (serius):</p>
+
+<ul>
+<li>1 masalah yang sering terjadi di kandang kamu</li>
+<li>Kira-kira itu akibat dari apa?</li>
+<li>Apa yang selama ini kamu abaikan?</li>
+</ul>
+
+
+
+<!-- CTA -->
+<h3>🎯 Lanjut ke Bab Berikutnya</h3>
+
+<p>
+Sekarang kamu sudah mulai melihat gambaran besarnya.
+</p>
+
+<p>
+Di Bab berikutnya, kita akan bahas:
+<b>bagaimana sistem ini sebenarnya bekerja di kandang.</b>
+</p>
+
+<a class="button" href="#bab2">Lanjut ke Bab 2 →</a>
+
+  <div class="card" id="bab2"></div>
+
+<h2>BAB 2 – Cara Kerja Sistem Ayam</h2>
+
+<!-- PEMBUKA -->
+<h3>🪝 Kenapa Kadang Bagus… Tapi Tidak Konsisten?</h3>
+
+<p>
+Setelah kamu mulai melihat kandang sebagai sistem…
+biasanya muncul pertanyaan baru:
+</p>
+
+<p><b>“Kalau ini sistem… sebenarnya cara kerjanya gimana?”</b></p>
+
+<p>
+Karena jujur saja…
+</p>
+
+<ul>
+<li>Kadang ayam tumbuh bagus</li>
+<li>Kadang tiba-tiba drop</li>
+<li>Kadang sehat… tapi cuma di awal</li>
+</ul>
+
+<p>
+Seolah-olah… tidak bisa diprediksi.
+</p>
+
+<div class="highlight">
+Padahal sebenarnya bisa diprediksi.  
+Kalau kita paham cara kerjanya.
+</div>
+
+
+
+<!-- CERITA -->
+<h3>🐔 Ilustrasi Sederhana</h3>
+
+<p>
+Bayangkan ayam itu seperti manusia yang lagi kerja.
+</p>
+
+<p>
+Kalau kamu kerja di ruangan:
+</p>
+
+<ul>
+<li>Panas banget</li>
+<li>Pengap</li>
+<li>Lampu nyala mati nggak jelas</li>
+</ul>
+
+<p>
+Kira-kira kamu bisa fokus?
+</p>
+
+<p><b>Kemungkinan besar: tidak.</b></p>
+
+<div class="highlight">
+Ayam juga sama.  
+Dia butuh kondisi stabil untuk “perform”.
+</div>
+
+
+
+<!-- KONSEP -->
+<h3>⚙️ 3 Sistem Utama di Dalam Kandang</h3>
+
+<p>
+Ada 3 faktor utama yang selalu bekerja:
+</p>
+
+<ul>
+<li>🌡 <b>Suhu</b> → menentukan kenyamanan</li>
+<li>💨 <b>Ventilasi</b> → menentukan kualitas udara</li>
+<li>💡 <b>Cahaya</b> → mengatur ritme biologis</li>
+</ul>
+
+<p>
+Yang sering tidak disadari:
+</p>
+
+<div class="highlight">
+Ketiganya tidak berdiri sendiri…  
+tapi saling mempengaruhi.
+</div>
+
+
+
+<!-- PENJELASAN DALAM -->
+<h3>🔗 Efek Domino (Ini yang Sering Terjadi)</h3>
+
+<p>
+Contoh sederhana:
+</p>
+
+<ul>
+<li>Suhu naik sedikit</li>
+<li>Ayam mulai stres</li>
+<li>Ayam makan lebih sedikit</li>
+<li>Pertumbuhan melambat</li>
+</ul>
+
+<p>
+Atau:
+</p>
+
+<ul>
+<li>Ventilasi buruk</li>
+<li>Udara pengap</li>
+<li>Ayam tidak nyaman</li>
+<li>Produktivitas turun</li>
+</ul>
+
+<div class="highlight">
+Masalahnya bukan besar…  
+tapi berulang terus.
+</div>
+
+
+
+<!-- HUMOR -->
+<h3>😄 Realita Lapangan</h3>
+
+<p>
+Kadang kita mikir:
+</p>
+
+<p><i>“Yang penting makan cukup.”</i></p>
+
+<p>
+Padahal ayamnya lagi kepanasan sambil mikir:
+</p>
+
+<div class="highlight">
+“Ini makan buat tumbuh… atau buat bertahan hidup ya?” 😂
+</div>
+
+
+
+<!-- INTERAKTIF -->
+<div class="card">
+<h3>⚡ Simulasi Cepat</h3>
+
+<p>
+Klik tombol di bawah untuk melihat efek perubahan kecil:
+</p>
+
+<button class="button" onclick="alert('Suhu naik → ayam stres → makan turun → pertumbuhan terganggu')">
+Lihat Dampaknya
+</button>
+</div>
+
+
+<!-- INSIGHT -->
+<h3>💡 Insight Penting</h3>
+
+<div class="highlight">
+Stabilitas lebih penting daripada kondisi “ideal sesaat”.
+</div>
+
+<p>
+Lebih baik:
+</p>
+
+<ul>
+<li>Suhu stabil di angka biasa</li>
+</ul>
+
+<p>
+Daripada:
+</p>
+
+<ul>
+<li>Kadang ideal… tapi sering berubah drastis</li>
+</ul>
+
+
+
+<!-- RINGKASAN -->
+<h3>📝 Ringkasan Bab 2</h3>
+
+<ul>
+<li>Ayam hidup dalam sistem yang sensitif</li>
+<li>Suhu, ventilasi, dan cahaya saling terhubung</li>
+<li>Perubahan kecil bisa berdampak besar</li>
+<li>Stabilitas adalah kunci utama</li>
+</ul>
+
+
+
+<!-- LATIHAN -->
+<h3>✍️ Latihan Singkat</h3>
+
+<p>Coba refleksi:</p>
+
+<ul>
+<li>Kapan kandang kamu paling panas?</li>
+<li>Kapan paling dingin?</li>
+<li>Apakah perubahan itu drastis?</li>
+</ul>
+
+<p>
+Kalau jawabannya “iya”…
+</p>
+
+<div class="highlight">
+Berarti sistem kamu belum stabil.
+</div>
+
+<h2>Kandang Pintar</h2>
+
+Simulasi sederhana bagaimana kandang bekerja otomatis
+<label>Suhu Kandang (°C)</label> <input type="range" min="20" max="40" value="28" class="slider" id="tempSlider"> <p id="tempValue">28°C</p>  <div id="statusBox" class="status good">   Kondisi Ideal - Ayam Sehat </div>  <br>  <button class="button" onclick="activateSystem()">Aktifkan Otomatis</button> 
+
+<!-- CTA -->
+<h3>🎯 Lanjut ke Bab Berikutnya</h3>
+
+<p>
+Sekarang kamu sudah paham cara kerja sistemnya.
+</p>
+
+<p>
+Tapi pertanyaan berikutnya:
+</p>
+
+<p><b>Kenapa di lapangan… banyak kandang tetap tidak stabil?</b></p>
+
+<a class="button" href="#bab3">Lanjut ke Bab 3 →</a>
+  <p>Kandang bukan tempat. Tapi sistem.</p>
+  <button class="button" onclick="alert('Stabilitas lebih penting dari kondisi ideal')">
+Insight 
+</div>
+
+<!-- BAB 2 -->
+<div class="card" id="bab2" onmouseover="updateProgress(60)">
+  
+</div>
+
+<!-- BAB 3 FULL -->
+<div class="card" id="bab3">
+
+<h2>BAB 3 – Kenapa Kandang Tidak Stabil</h2>
+
+<!-- PEMBUKA -->
+<h3>🪝 “Saya Sudah Benar… Tapi Kok Hasilnya Masih Naik Turun?”</h3>
+
+<p>
+Ini mungkin kalimat yang paling sering muncul:
+</p>
+
+<p><i>“Saya sudah lakukan semuanya… tapi hasil tetap tidak stabil.”</i></p>
+
+<p>
+Dan jujur saja…
+</p>
+
+<p>
+Itu bukan perasaan kamu saja.
+</p>
+
+<div class="highlight">
+Banyak peternak mengalami hal yang sama.
+</div>
+
+<p>
+Masalahnya bukan karena kamu tidak usaha.
+</p>
+
+<p>
+Masalahnya karena ada hal-hal kecil…
+yang tidak terlihat.
+</p>
+
+
+
+<!-- CERITA -->
+<h3>🪣 Ilustrasi Sederhana (Ember Bocor)</h3>
+
+<p>
+Bayangkan kamu punya ember.
+</p>
+
+<p>
+Kamu isi air terus…
+</p>
+
+<p>
+Tapi di bawahnya ada lubang kecil.
+</p>
+
+<p>
+Air tetap masuk.  
+Tapi perlahan… keluar juga.
+</p>
+
+<div class="highlight">
+Kandang juga begitu.
+</div>
+
+<p>
+Kamu sudah kasih pakan, rawat, jaga…
+</p>
+
+<p>
+Tapi kalau ada “kebocoran kecil”…
+hasilnya tidak akan maksimal.
+</p>
+
+
+
+<!-- KONSEP -->
+<h3>⚙️ Penyebab Utama Ketidakstabilan</h3>
+
+<p>
+Masalah besar jarang datang tiba-tiba.
+</p>
+
+<p>
+Biasanya berasal dari:
+</p>
+
+<ul>
+<li>Perubahan kecil</li>
+<li>Tidak terdeteksi</li>
+<li>Terjadi berulang</li>
+</ul>
+
+<div class="highlight">
+Dan akhirnya… jadi masalah besar.
+</div>
+
+
+
+<!-- REALITA -->
+<h3>📉 Realita di Lapangan</h3>
+
+<ul>
+<li>Pagi: suhu ideal</li>
+<li>Siang: panas berlebih</li>
+<li>Malam: terlalu dingin</li>
+</ul>
+
+<p>
+Tapi karena tidak dipantau…
+</p>
+
+<p><b>semua dianggap normal.</b></p>
+
+<div class="highlight">
+Padahal ayam sedang “berjuang adaptasi” terus-menerus.
+</div>
+
+
+
+<!-- HUMOR -->
+<h3>😄 Sedikit Jujur (Biar Ngena)</h3>
+
+<p>
+Kadang kita baru sadar ada masalah…
+</p>
+
+<p>
+setelah ayamnya duluan “kasih sinyal” 😅
+</p>
+
+<p>
+Dan biasanya… itu sudah telat.
+</p>
+
+
+
+<!-- INTERAKTIF CHECKLIST -->
+<div class="card">
+<h3>📋 Checklist Diagnosa Kandang</h3>
+
+<p>Centang yang pernah terjadi di kandang kamu:</p>
+
+<label><input type="checkbox"> Suhu sering berubah drastis</label><br>
+<label><input type="checkbox"> Kandang terasa pengap</label><br>
+<label><input type="checkbox"> Ayam terlihat stres di siang hari</label><br>
+<label><input type="checkbox"> Cahaya tidak teratur</label><br>
+<label><input type="checkbox"> Tidak pernah cek kondisi secara rutin</label><br>
+
+<p><i>Semakin banyak yang dicentang… semakin tidak stabil sistemnya.</i></p>
+</div>
+
+
+
+<!-- INTERAKTIF INSIGHT -->
+<div class="card">
+<h3>⚡ Klik Insight</h3>
+
+<button class="button" onclick="alert('Masalah besar bukan dari satu hal… tapi dari banyak hal kecil yang dibiarkan.')">
+Buka Insight
+</button>
+</div>
+
+
+
+<!-- INSIGHT -->
+<h3>💡 Insight Penting</h3>
+
+<div class="highlight">
+Yang membuat kandang tidak stabil bukan satu masalah besar…  
+tapi banyak masalah kecil yang tidak dikontrol.
+</div>
+
+<p>
+Dan yang lebih penting:
+</p>
+
+<p>
+Masalah ini sering tidak terlihat…
+kalau tidak dipantau.
+</p>
+
+
+
+<!-- RINGKASAN -->
+<h3>📝 Ringkasan Bab 3</h3>
+
+<ul>
+<li>Masalah besar berasal dari hal kecil</li>
+<li>Perubahan kecil sering tidak disadari</li>
+<li>Efeknya akumulatif</li>
+<li>Tanpa monitoring, sistem tidak stabil</li>
+</ul>
+
+
+
+<!-- LATIHAN -->
+<h3>✍️ Latihan Singkat</h3>
+
+<p>
+Dari checklist tadi:
+</p>
+
+<ul>
+<li>Mana yang paling sering terjadi?</li>
+<li>Sudah berapa lama itu terjadi?</li>
+<li>Kenapa belum diperbaiki?</li>
+</ul>
+
+<div class="highlight">
+Kadang jawabannya sederhana:  
+karena kita tidak sadar itu masalah.
+</div>
+
+<style>
+
+/* ANIMASI HALUS */
+.status {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.5s ease;
+}
+
+/* efek perubahan */
+.animate {
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* warna */
+.normal { color: #27ae60; }
+.warning { color: #f39c12; }
+.danger { color: #e74c3c; }
+
+/* INFO TEXT FADE */
+#info {
+  transition: opacity 0.5s ease;
+}
+
+.fade {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+</style>
+<style>
+
+.notif {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #e74c3c;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 9999;
+
+  transform: translateX(120%);
+  transition: all 0.5s ease;
+}
+
+/* muncul */
+.notif.show {
+  transform: translateX(0);
+}
+
+/* sembunyi */
+.hidden {
+  display: none;
+}
+
+</style>
+
+<style>
+.log-box {
+  max-height: 150px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 14px;
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.log-item {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.log-time {
+  color: #888;
+  font-size: 12px;
+}
+</style>
+
+<script>
+function addLog(text) {
+    let log = document.getElementById("log");
+
+    let time = new Date().toLocaleTimeString();
+
+    let item = document.createElement("div");
+    item.className = "log-item";
+
+    item.innerHTML = `
+        <div>${text}</div>
+        <div class="log-time">${time}</div>
+    `;
+
+    log.prepend(item); // terbaru di atas
+}
+</script>
+
+<script>
+
+function updateStatus(el, text, className) {
+    el.className = "status " + className + " animate";
+    el.innerHTML = text;
+
+    setTimeout(() => {
+        el.classList.remove("animate");
+    }, 500);
+}
+
+function updateInfo(text) {
+    let info = document.getElementById("info");
+
+    info.classList.add("fade");
+
+    setTimeout(() => {
+        info.innerHTML = text;
+        info.classList.remove("fade");
+        info.classList.add("show");
+    }, 300);
+}
+
+function startSimulasi() {
+
+    let step = 0;
+
+    let wl = document.getElementById("wl");
+    let kub = document.getElementById("kub");
+
+    let steps = [
+
+    () => {
+        updateStatus(wl, "NORMAL", "normal");
+        updateStatus(kub, "NORMAL", "normal");
+        updateInfo("Kondisi awal: semua terlihat normal");
+
+        showNotif("✅ Kondisi normal");
+        addLog("Semua ayam dalam kondisi normal");
+    },
+
+    () => {
+        updateStatus(wl, "MULAI STRES", "warning");
+        updateStatus(kub, "MASIH NORMAL", "normal");
+        updateInfo("WL mulai menunjukkan perubahan...");
+
+        showNotif("⚠️ WL mulai stres");
+        addLog("WL mulai menunjukkan tanda stres");
+    },
+
+    () => {
+        updateStatus(wl, "DROP", "danger");
+        updateStatus(kub, "MASIH NORMAL", "normal");
+        updateInfo("⚠️ WARNING: WL drop lebih dulu!");
+
+        showNotif("🚨 WL DROP!");
+        addLog("WL DROP terdeteksi! Sistem memberi peringatan");
+    },
+
+    () => {
+        updateStatus(wl, "DROP PARAH", "danger");
+        updateStatus(kub, "MULAI TERPENGARUH", "warning");
+        updateInfo("KUB mulai ikut terdampak!");
+
+        showNotif("🔥 Kondisi darurat!");
+        addLog("KUB mulai terdampak akibat keterlambatan penanganan");
+    }
+
+];
+
+    function nextStep() {
+        if (step < steps.length) {
+            steps[step]();
+            step++;
+
+            // delay lebih natural
+            let delay = (step === 3) ? 2500 : 1800;
+            setTimeout(nextStep, delay);
+        }
+    }
+
+    nextStep();
+}
+
+</script>
+
+<script>
+function playBeep() {
+    let ctx = new (window.AudioContext || window.webkitAudioContext)();
+    let osc = ctx.createOscillator();
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(800, ctx.currentTime);
+
+    osc.connect(ctx.destination);
+    osc.start();
+
+    setTimeout(() => {
+        osc.stop();
+    }, 300);
+}
+</script>
+
+<script>
+function showNotif(text) {
+    let notif = document.getElementById("notif");
+
+    notif.innerHTML = text;
+    notif.classList.remove("hidden");
+    notif.classList.add("show");
+
+    playBeep(); // 🔥 bunyi
+
+    setTimeout(() => {
+        notif.classList.remove("show");
+        notif.classList.add("hidden");
+    }, 3000);
+}
+</script>
+</head>
+
+<!-- SIMULASI -->
+<div class="wl-sim">
+<div class="box">
+  <h3>📊 Log Kandang</h3>
+  <div id="log" class="log-box"></div>
+</div>
+  <div class="wl-container">
+
+    <h1>🐔 Simulasi WL sebagai Sensor Hidup</h1>
+    <p><i>“Yang cepat bereaksi… justru menyelamatkan yang lain.”</i></p>
+
+    <div class="box">
+      <h2>White Leghorn (WL)</h2>
+      <div id="wl" class="status normal">-</div>
+    </div>
+
+    <div class="box">
+      <h2>Ayam Kampung (KUB)</h2>
+      <div id="kub" class="status normal">-</div>
+    </div>
+
+    <div class="box">
+      <h3>Status Sistem</h3>
+      <p id="info">Klik mulai simulasi</p>
+    </div>
+
+    <div class="button" onclick="startSimulasi()">
+      🚀 Mulai Simulasi
+    </div>
+
+    <div class="box">
+      WL lebih sensitif → indikator awal
+    </div>
+
+    <div id="notif" class="notif hidden">
+  ⚠️ WARNING: WL terdeteksi drop!
+    </div>
+
+  </div>
+</div> <!-- ⛔ WAJIB TUTUP DI SINI -->
+
+<!-- 🔥 LANJUTAN BAB (KEMBALI NORMAL) -->
+<div class="ebook-content">
+
+  <h2>Insight</h2>
+
+  <p>
+    WL lebih sensitif → jadi indikator awal...
+  </p>
+
+  <p>
+    KUB lebih kuat → tapi bisa telat menunjukkan gejala  
+  </p>
+
+  <p><b>Solusi:</b></p>
+
+  <p>
+    Gabungkan keduanya + sistem IoT  
+    → Anda tahu masalah sebelum terlambat
+  </p>
+
+</div>
+
+<!-- CTA -->
+<div class="ebook-content">
+  <h3>🎯 Lanjut ke Bab Berikutnya</h3>
+</div>
+
+<p>
+Sekarang kamu sudah tahu masalahnya.
+</p>
+
+<p>
+Pertanyaan berikutnya:
+</p>
+
+<p><b>Gimana cara mengontrol semua itu… tanpa harus ada di kandang 24 jam?</b></p>
+
+<a class="button" href="#bab4">Lanjut ke Bab 4 →</a>
+
+  <div class="card" id="bab4"></div>
+
+<h2>BAB 4 – Otak Kandang (WL Bio-Control System)</h2>
+
+<!-- PEMBUKA -->
+<h3>🪝 Harus Nunggu di Kandang Terus?</h3>
+
+<p>
+Setelah tahu bahwa masalah ada di “ketidakstabilan”…
+biasanya muncul pertanyaan besar:
+</p>
+
+<p><b>“Berarti saya harus mantengin kandang terus?”</b></p>
+
+<p>
+Jawaban jujurnya:
+</p>
+
+<p><b>Tidak mungkin.</b></p>
+
+<p>
+Kita punya waktu terbatas.
+</p>
+
+<div class="highlight">
+Dan sistem yang bergantung pada manusia…  
+biasanya tidak konsisten.
+</div>
+
+
+
+<!-- CERITA -->
+<h3>🧠 Analogi Sederhana (Tubuh Manusia)</h3>
+
+<p>
+Coba bayangkan tubuh kita.
+</p>
+
+<p>
+Apakah kita setiap detik:
+</p>
+
+<ul>
+<li>Mengatur detak jantung?</li>
+<li>Mengontrol suhu tubuh?</li>
+<li>Mengatur napas secara manual?</li>
+</ul>
+
+<p><b>Tidak.</b></p>
+
+<p>
+Semua itu diatur oleh satu sistem:
+</p>
+
+<div class="highlight">
+👉 Otak + sistem saraf
+</div>
+
+<p>
+Yang bekerja otomatis… tanpa kita sadari.
+</p>
+
+
+
+<!-- TRANSISI -->
+<h3>🔄 Dari Tubuh ke Kandang</h3>
+
+<p>
+Nah sekarang bayangkan…
+</p>
+
+<p>
+Kalau kandang juga punya “otak”.
+</p>
+
+<p>
+Yang bisa:
+</p>
+
+<ul>
+<li>Membaca kondisi</li>
+<li>Mengambil keputusan</li>
+<li>Menjalankan aksi</li>
+</ul>
+
+<div class="highlight">
+Inilah konsep WL Bio-Control System.
+</div>
+
+
+
+<!-- KONSEP -->
+<h3>⚙️ Cara Kerja Sistem</h3>
+
+<p>
+Sistem ini sebenarnya sederhana:
+</p>
+
+<ul>
+<li>📡 <b>Sensor</b> → membaca kondisi kandang</li>
+<li>🧠 <b>Controller</b> → memproses data</li>
+<li>⚡ <b>Output</b> → menjalankan aksi</li>
+</ul>
+
+<p>
+Contoh:
+</p>
+
+<ul>
+<li>Suhu naik → kipas menyala</li>
+<li>Suhu turun → kipas mati</li>
+<li>Cahaya kurang → lampu menyala</li>
+</ul>
+
+<div class="highlight">
+Semua berjalan otomatis.
+</div>
+
+
+
+<!-- INTERAKTIF -->
+<div class="card">
+<h3>🔍 Kenali Komponen Sistem</h3>
+
+<button class="button" onclick="alert('Sensor: alat untuk membaca suhu, kelembaban, dan cahaya')">
+Sensor
+</button>
+
+<button class="button" onclick="alert('Controller: otak sistem yang memutuskan aksi')">
+Controller
+</button>
+
+<button class="button" onclick="alert('Output: kipas, lampu, dan alat lain yang bekerja')">
+Output
+</button>
+</div>
+
+
+
+<!-- REALITA -->
+<h3>💸 Harus Mahal?</h3>
+
+<p>
+Banyak yang langsung mikir:
+</p>
+
+<p><i>“Wah ini pasti mahal…”</i></p>
+
+<p>
+Padahal kenyataannya:
+</p>
+
+<ul>
+<li>Controller sederhana</li>
+<li>Sensor suhu & kelembaban</li>
+<li>Relay</li>
+<li>Kipas & lampu</li>
+</ul>
+
+<div class="highlight">
+Bisa mulai dari 400–600 ribu.
+</div>
+
+<p>
+Artinya?
+</p>
+
+<p><b>Teknologi ini bukan cuma untuk peternakan besar.</b></p>
+
+
+
+<!-- HUMOR -->
+<h3>😄 Realita Ringan</h3>
+
+<p>
+Kadang sistem sederhana ini…
+</p>
+
+<p><b>lebih disiplin daripada kita 😅</b></p>
+
+<p>
+Dia tidak lupa.
+Tidak capek.
+Tidak “nanti saja”.
+</p>
+
+
+
+<!-- INSIGHT -->
+<h3>💡 Insight Penting</h3>
+
+<div class="highlight">
+Tujuannya bukan membuat kandang jadi rumit…  
+tapi membuatnya lebih stabil dan mudah dikontrol.
+</div>
+
+<p>
+Teknologi di sini bukan gaya-gayaan.
+</p>
+
+<p>
+Tapi alat bantu…
+supaya sistem bekerja konsisten.
+</p>
+
+
+
+<!-- RINGKASAN -->
+<h3>📝 Ringkasan Bab 4</h3>
+
+<ul>
+<li>Kita tidak bisa mengontrol kandang 24 jam</li>
+<li>Solusinya: sistem otomatis</li>
+<li>WL Bio-Control = sensor + controller + output</li>
+<li>Bisa dibuat dengan biaya terjangkau</li>
+</ul>
+
+
+
+<!-- LATIHAN -->
+<h3>✍️ Latihan Singkat</h3>
+
+<p>Coba bayangkan:</p>
+
+<ul>
+<li>Bagian mana di kandang kamu yang paling sering berubah?</li>
+<li>Apa yang terjadi kalau itu bisa dikontrol otomatis?</li>
+</ul>
+
+<div class="highlight">
+Di situlah titik awal sistem kamu.
+</div>
+
+
+
+<!-- CTA -->
+<h3>🎯 Lanjut ke Bab Berikutnya</h3>
+
+<p>
+Sekarang kamu sudah tahu konsepnya.
+</p>
+
+<p>
+Pertanyaan berikutnya:
+</p>
+
+<p><b>Gimana cara bikin sistem ini sendiri… dari nol?</b></p>
+
+<a class="button" href="#bab5">Lanjut ke Bab 5 →</a>
+
+<div class="card" id="bab5"></div>
+
+<h2>BAB 5 – Otak Kandang (WL Bio-Control System)</h2>
+
+<!-- PEMBUKA -->
+<h3>🪝 “Emang Saya Bisa Bikin Sistem Ini Sendiri?”</h3>
+
+<p>
+Ini biasanya reaksi pertama:
+</p>
+
+<p><i>“Wah kayaknya ribet…”</i></p>
+<p><i>“Saya bukan orang teknik…”</i></p>
+
+<p>
+Tenang.
+</p>
+
+<p><b>Kita tidak sedang bikin roket 😄</b></p>
+
+<div class="highlight">
+Kita cuma menyusun sistem sederhana…  
+yang cara kerjanya jelas.
+</div>
+
+
+
+<!-- CERITA -->
+<h3>🧩 Analogi Lego</h3>
+
+<p>
+Bayangkan kamu main Lego.
+</p>
+
+<p>
+Kamu tidak perlu jadi insinyur untuk menyusunnya.
+</p>
+
+<p>
+Yang penting:
+</p>
+
+<ul>
+<li>Tahu bagian-bagiannya</li>
+<li>Tahu cara menyambungnya</li>
+</ul>
+
+<div class="highlight">
+Sistem ini juga sama.
+</div>
+
+
+
+<!-- KONSEP -->
+<h3>⚙️ Komponen Utama</h3>
+
+<p>
+Kita pecah jadi bagian sederhana:
+</p>
+
+<ul>
+<li>🧠 <b>Controller</b> → otak sistem</li>
+<li>🌡 <b>Sensor</b> → membaca suhu & kelembaban</li>
+<li>💡 <b>Sensor cahaya</b> → membaca kondisi terang/gelap</li>
+<li>🔌 <b>Relay</b> → saklar otomatis</li>
+<li>💨 <b>Kipas</b> → kontrol suhu</li>
+<li>💡 <b>Lampu LED</b> → kontrol cahaya</li>
+</ul>
+
+<div class="highlight">
+Semua ini adalah komponen umum & mudah didapat.
+</div>
+
+
+
+<!-- INTERAKTIF -->
+<div class="card">
+<h3>🔍 Kenali Fungsinya</h3>
+
+<button class="button" onclick="alert('Controller = otak yang mengatur semua keputusan')">Controller</button>
+<button class="button" onclick="alert('Sensor = alat baca kondisi kandang')">Sensor</button>
+<button class="button" onclick="alert('Relay = saklar otomatis nyala/mati')">Relay</button>
+</div>
+
+
+
+<!-- STEP -->
+<h3>🛠 Alur Perakitan (Versi Sederhana)</h3>
+
+<p>
+Kita bikin simpel:
+</p>
+
+<ul>
+<li>1️⃣ Sensor membaca kondisi</li>
+<li>2️⃣ Data masuk ke controller</li>
+<li>3️⃣ Controller memutuskan</li>
+<li>4️⃣ Relay mengaktifkan alat</li>
+<li>5️⃣ Kipas / lampu bekerja</li>
+</ul>
+
+<div class="highlight">
+Itu saja. Tidak serumit yang dibayangkan.
+</div>
+
+
+
+<!-- INTERAKTIF STEP -->
+<div class="card">
+<h3>⚡ Simulasi Langkah</h3>
+
+<button class="button" onclick="alert('Langkah 1: Pasang sensor di kandang')">Langkah 1</button>
+<button class="button" onclick="alert('Langkah 2: Hubungkan ke controller')">Langkah 2</button>
+<button class="button" onclick="alert('Langkah 3: Sambungkan relay')">Langkah 3</button>
+<button class="button" onclick="alert('Langkah 4: Tes sistem')">Langkah 4</button>
+</div>
+
+
+
+<!-- BIAYA -->
+<h3>💸 Estimasi Biaya</h3>
+
+<ul>
+<li>Controller: ±100–200 ribu</li>
+<li>Sensor: ±50–100 ribu</li>
+<li>Relay: ±20–50 ribu</li>
+<li>Kipas & lampu: ±100–200 ribu</li>
+</ul>
+
+<div class="highlight">
+Total: sekitar 400–600 ribu
+</div>
+
+<p>
+Bandingkan dengan manfaatnya:
+</p>
+
+<p><b>Sistem stabil setiap hari.</b></p>
+
+
+
+<!-- HUMOR -->
+<h3>😄 Realita Ringan</h3>
+
+<p>
+Lucunya…
+</p>
+
+<p>
+Kadang kita lebih takut mulai…
+</p>
+
+<p>
+daripada benar-benar mencoba 😅
+</p>
+
+<div class="highlight">
+Padahal setelah dicoba… ternyata bisa.
+</div>
+
+
+
+<!-- INSIGHT -->
+<h3>💡 Insight Penting</h3>
+
+<div class="highlight">
+Bukan harus langsung sempurna.  
+Mulai dari sederhana… lalu berkembang.
+</div>
+
+<p>
+Tidak perlu langsung full otomatis.
+</p>
+
+<p>
+Mulai dari:
+</p>
+
+<ul>
+<li>Kontrol suhu dulu</li>
+<li>Lalu ventilasi</li>
+<li>Lalu cahaya</li>
+</ul>
+
+
+
+<!-- RINGKASAN -->
+<h3>📝 Ringkasan Bab 5</h3>
+
+<ul>
+<li>Sistem bisa dibuat sendiri</li>
+<li>Komponen sederhana & murah</li>
+<li>Alurnya jelas & logis</li>
+<li>Bisa mulai dari versi basic</li>
+</ul>
+
+
+
+<!-- LATIHAN -->
+<h3>✍️ Latihan Singkat</h3>
+
+<p>
+Coba jawab:
+</p>
+
+<ul>
+<li>Kalau mulai, kamu mau mulai dari bagian mana?</li>
+<li>Berapa budget yang siap kamu pakai?</li>
+<li>Kapan kamu akan mulai?</li>
+</ul>
+
+<div class="highlight">
+Jawaban terakhir adalah yang paling penting.
+</div>
+
+
+
+<!-- CTA -->
+<h3>🎯 Lanjut ke Bab Berikutnya</h3>
+
+<p>
+Sekarang kamu sudah tahu:
+</p>
+
+<p><b>ini bukan cuma teori… tapi bisa dipraktekan.</b></p>
+
+<p>
+Di Bab terakhir, kita akan bahas:
+</p>
+
+<p><b>bagaimana mulai implementasi nyata di kandang kamu.</b></p>
+
+<a class="button" href="#bab6">Lanjut ke Bab 6 →</a>
+
+<div class="card" id="bab6"></div>
+
+<h2>BAB 6 – Otak Kandang (WL Bio-Control System)</h2>
+
+<p><i>“Bukan sekadar alat… tapi sistem yang mulai memahami.”</i></p>
+
+<hr>
+
+<h3>🐔 1. Menimbang Tanpa Tangkap Ayam</h3>
+
+<p>Biasanya, kita harus kejar ayam dulu.</p>
+
+<p><b>Tanpa drama kejar-kejar 😄</b></p>
+
+<p>Dengan sistem ini:</p>
+
+<ul>
+<li>Ayam cukup naik ke alat timbang</li>
+<li>Data langsung tercatat otomatis</li>
+<li>Tidak stres, tidak capek</li>
+</ul>
+
+<div class="highlight" onclick="this.style.background='#d1ecf1'">
+💡 Klik: Semakin sering ditimbang → semakin akurat tren pertumbuhan
+</div>
+
+<div class="card">
+
+<h3>⚖️ Simulasi Timbang Otomatis</h3>
+
+<p>Ayam naik ke pijakan… sistem membaca berat:</p>
+
+<div id="beratAyam" style="font-size:30px; font-weight:bold;">0 gram</div>
+
+<div class="button" onclick="timbang()">🐔 Simulasi Ayam Naik</div>
+
+<script>
+function timbang() {
+  let berat = Math.floor(Math.random() * (2000 - 800) + 800);
+  document.getElementById("beratAyam").innerHTML = berat + " gram";
+}
+</script>
+
+</div>
+
+<p>Dan AI bisa bantu:</p>
+<ul>
+<li>membaca tren kenaikan bobot</li>
+<li>memberi tahu jika pertumbuhan melambat</li>
+</ul>
+
+<hr>
+
+<h3>⏳ 2. “Menghitung Mundur” Sebelum Ayam Drop</h3>
+
+<p><b>Ini yang paling gila… tapi nyata.</b></p>
+
+<p>Biasanya:</p>
+<p>👉 ayam sakit → baru kita sadar</p>
+
+<p>Dengan AI:</p>
+<ul>
+<li>melihat pola perubahan kecil</li>
+<li>membandingkan data sebelumnya</li>
+<li>mengenali tanda awal</li>
+</ul>
+
+<div class="button" onclick="alert('Simulasi: Sistem mendeteksi potensi drop dalam 2 hari')">
+🔍 Coba Simulasi Prediksi
+</div>
+
+<p>Seolah-olah sistem berkata:</p>
+
+<div class="highlight">
+“Kalau kondisi begini terus… 1–2 hari lagi ayam bisa drop”
+</div>
+
+<p>Bukan ramalan. Tapi analisa pola.</p>
+
+<p>Ibaratnya:</p>
+<p><i>melihat awan gelap → tahu akan hujan</i></p>
+
+<hr>
+
+<h3>💡 3. Ritme Cahaya yang “Paham Ayam”</h3>
+
+<p>Bukan sekadar lampu nyala-mati.</p>
+
+<p>Tapi:</p>
+<ul>
+<li>disesuaikan umur ayam</li>
+<li>disesuaikan kondisi kandang</li>
+</ul>
+
+<div class="highlight">
+AI membantu menentukan pola cahaya terbaik
+</div>
+
+<hr>
+
+<h3>🌡️ 4. Sistem Belajar dari Kandang Anda</h3>
+
+<p>Setiap kandang itu unik:</p>
+
+<ul>
+<li>lokasi berbeda</li>
+<li>cuaca berbeda</li>
+<li>perlakuan berbeda</li>
+</ul>
+
+<p>AI bisa:</p>
+
+<div class="highlight">
+👉 belajar dari data kandang Anda sendiri
+</div>
+
+<p>Jadi bukan sistem umum… tapi personal.</p>
+
+<hr>
+
+<h3>🔔 5. Notifikasi yang Tidak Asal Bunyi</h3>
+
+<p>Bukan semua hal diberi notifikasi.</p>
+
+<p>Tapi hanya yang penting:</p>
+
+<ul>
+<li>suhu berbahaya</li>
+<li>pola berubah</li>
+<li>indikasi masalah</li>
+</ul>
+
+<div class="button" onclick="showNotif('🔔 Notifikasi penting: suhu naik!')">
+🔔 Contoh Notifikasi
+</div>
+
+<p>Jadi Anda:</p>
+<ul>
+<li>tidak capek lihat HP</li>
+<li>tetap dapat info penting</li>
+</ul>
+
+<hr>
+
+<h3>😄 Klarifikasi Penting</h3>
+
+<p>Banyak yang berpikir:</p>
+
+<div class="highlight">
+“Wah ini pasti ribet… harus ngerti coding…”
+</div>
+
+<p>Jawabannya:</p>
+
+<p><b>❌ Tidak.</b></p>
+
+<ul>
+<li>tidak perlu jadi programmer</li>
+<li>tidak perlu ngerti coding</li>
+<li>tidak perlu pusing teknis</li>
+</ul>
+
+<p>Karena:</p>
+
+<div class="highlight">
+👉 sistem sudah disederhanakan  
+👉 tinggal pakai  
+👉 tinggal manfaatkan  
+</div>
+
+<p>Ibaratnya:</p>
+
+<p><i>pakai HP… tanpa tahu dalamnya bagaimana</i></p>
+
+<hr>
+
+<h3>🧠 Intinya Bab Ini</h3>
+
+<ul>
+<li>IoT = alat yang mengirim data</li>
+<li>AI = sistem yang memahami data</li>
+<li>Gabungan = kandang punya “insting”</li>
+<li>Banyak proses jadi otomatis</li>
+<li>Anda tetap pegang kendali</li>
+</ul>
+
+<hr>
+
+<h3>✍️ Refleksi Interaktif</h3>
+
+<div class="button" onclick="toggleRefleksi()">
+👉 Klik untuk refleksi
+</div>
+
+<div id="refleksiBox" style="display:none; margin-top:10px;">
+<ul>
+<li>Kalau Anda tahu ayam sakit lebih cepat… apa dampaknya?</li>
+<li>Kalau tidak perlu tangkap ayam… berapa tenaga hemat?</li>
+<li>Kalau kandang bisa memberi tahu duluan… apa berubah?</li>
+</ul>
+</div>
+
+<script>
+function toggleRefleksi() {
+  let box = document.getElementById("refleksiBox");
+  box.style.display = (box.style.display === "none") ? "block" : "none";
+}
+</script>
+
+<hr>
+
+<h3>🎯 Penutup Bab</h3>
+
+<p>Teknologi ini bukan untuk menggantikan Anda.</p>
+
+<p>Tapi untuk:</p>
+
+<ul>
+<li>memperkuat insting</li>
+<li>mempercepat keputusan</li>
+<li>mengurangi kesalahan</li>
+</ul>
+
+<div class="highlight">
+Peternak tetap penentu arah  
+Teknologi hanya membantu melihat lebih jelas
+</div>
+
+<p>Dan sekarang…</p>
+
+<ul>
+<li>Anda sudah tahu masalahnya</li>
+<li>Anda sudah tahu solusinya</li>
+<li>Anda sudah tahu cara kerjanya</li>
+</ul>
+
+<p><b>Tinggal satu langkah lagi:</b></p>
+
+<p>👉 mulai dari kandang Anda sendiri</p>
+
+</div>
+
+<a class="button" href="#bab7">Lanjut ke Bab 7 →</a>
+
+<div class="card" id="bab7"></div>
+
+<h2>BAB 7 – Otak Kandang (WL Bio-Control System)</h2>
+
+<!-- PEMBUKA -->
+<h3>🪝 Masalah Terbesar Bukan di Ilmu… Tapi di Aksi</h3>
+
+<p>
+Sampai di titik ini…
+</p>
+
+<p>
+Kamu sudah paham:
+</p>
+
+<ul>
+<li>Cara melihat kandang</li>
+<li>Cara kerja sistem</li>
+<li>Penyebab masalah</li>
+<li>Solusinya</li>
+<li>Cara merakitnya</li>
+</ul>
+
+<p>
+Tapi ada satu hal yang sering terjadi:
+</p>
+
+<div class="highlight">
+Semua berhenti di “paham”…  
+tanpa pernah benar-benar dilakukan.
+</div>
+
+
+
+<!-- CERITA -->
+<h3>🚶 Cerita Singkat (Yang Sering Terjadi)</h3>
+
+<p>
+Banyak orang semangat di awal.
+</p>
+
+<p>
+Baca sampai habis…
+</p>
+
+<p>
+Lalu bilang:
+</p>
+
+<p><i>“Nanti saya coba…”</i></p>
+
+<p>
+Dan kamu tahu kelanjutannya.
+</p>
+
+<div class="highlight">
+“Nanti” sering berubah jadi “tidak pernah”.
+</div>
+
+
+
+<!-- KONSEP -->
+<h3>🧠 Prinsip Sederhana</h3>
+
+<p>
+Perubahan tidak datang dari:
+</p>
+
+<ul>
+<li>Ilmu saja</li>
+<li>Rencana saja</li>
+</ul>
+
+<p>
+Tapi dari:
+</p>
+
+<div class="highlight">
+Aksi kecil… yang dilakukan sekarang.
+</div>
+
+
+
+<!-- CHALLENGE -->
+<div class="card">
+<h3>🔥 Challenge 7 Hari (WAJIB COBA)</h3>
+
+<p>
+Bukan untuk sempurna.  
+Tapi untuk mulai.
+</p>
+
+<label><input type="checkbox" onclick="save()"> Hari 1: Cek suhu kandang (pagi–siang–malam)</label><br>
+<label><input type="checkbox" onclick="save()"> Hari 2: Evaluasi ventilasi</label><br>
+<label><input type="checkbox" onclick="save()"> Hari 3: Perhatikan pola cahaya</label><br>
+<label><input type="checkbox" onclick="save()"> Hari 4: Tentukan bagian yang mau diotomatisasi</label><br>
+<label><input type="checkbox" onclick="save()"> Hari 5: Mulai beli 1–2 komponen</label><br>
+<label><input type="checkbox" onclick="save()"> Hari 6: Rakit versi sederhana</label><br>
+<label><input type="checkbox" onclick="save()"> Hari 7: Uji & evaluasi</label><br>
+
+<p><i>Checklist ini akan tersimpan otomatis di browser kamu.</i></p>
+</div>
+
+
+
+<!-- INTERAKTIF -->
+<div class="card">
+<h3>⚡ Klik Pengingat</h3>
+
+<button class="button" onclick="alert('Mulai dari kecil lebih baik daripada menunggu sempurna.')">
+Klik untuk Ingat
+</button>
+</div>
+
+
+
+<!-- REALITA -->
+<h3>📊 Realita yang Perlu Kamu Terima</h3>
+
+<p>
+Kandang yang stabil bukan hasil:
+</p>
+
+<ul>
+<li>Sekali setting</li>
+<li>Sekali coba</li>
+</ul>
+
+<p>
+Tapi hasil dari:
+</p>
+
+<ul>
+<li>Observasi</li>
+<li>Penyesuaian</li>
+<li>Perbaikan bertahap</li>
+</ul>
+
+<div class="highlight">
+Sistem dibangun… bukan langsung jadi.
+</div>
+
+
+
+<!-- HUMOR -->
+<h3>😄 Sedikit Jujur</h3>
+
+<p>
+Kadang yang bikin gagal bukan karena tidak bisa…
+</p>
+
+<p>
+tapi karena terlalu lama mikir 😅
+</p>
+
+<div class="highlight">
+Mulai aja dulu. Nanti juga belajar di jalan.
+</div>
+
+
+
+<!-- INSIGHT -->
+<h3>💡 Insight Penutup</h3>
+
+<div class="highlight">
+Perbedaan terbesar bukan pada alat…  
+tapi pada siapa yang benar-benar mulai.
+</div>
+
+<p>
+Kandang yang kamu punya hari ini…
+</p>
+
+<p>
+bisa jadi jauh lebih stabil…
+</p>
+
+<p>
+hanya dengan perubahan kecil yang konsisten.
+</p>
+
+
+
+<!-- RINGKASAN -->
+<h3>📝 Ringkasan Bab 7</h3>
+
+<ul>
+<li>Ilmu tanpa aksi tidak menghasilkan perubahan</li>
+<li>Mulai dari langkah kecil</li>
+<li>Gunakan challenge untuk memulai</li>
+<li>Perbaikan dilakukan bertahap</li>
+</ul>
+
+
+
+<!-- PENUTUP -->
+<h3>🎯 Penutup Akhir</h3>
+
+<p>
+Sekarang pilihan ada di tangan kamu:
+</p>
+
+<ul>
+<li>Tetap seperti sekarang</li>
+<li>Atau mulai berubah dari hari ini</li>
+</ul>
+
+<!-- UPSELL PAGE -->
+<h2>Mau Lebih Cepat?</h2>
+
+<p>
+Kalau mau langsung praktek tanpa trial-error…
+</p>
+
+<ul>
+<li>Diagram sistem lengkap (anti trial-error)</li>
+<li>Panduan setting step-by-step</li>
+<li>Rekomendasi komponen yang sudah teruji</li>
+</ul>
+
+<div class="highlight">
+"Mahal ya alatnya ..."
+</div>
+
+<div class="ebook-content">
+
+<h2>🎯 Saatnya Anda Memutuskan</h2>
+
+<p><i>“Anda sudah sampai di sini… berarti Anda serius.”</i></p>
+
+<hr>
+
+<p>Dari awal sampai sekarang, Anda sudah melihat:</p>
+
+<ul>
+<li>Masalah di kandang yang sering tidak disadari</li>
+<li>Cara kerja sistem “otak kandang”</li>
+<li>Simulasi nyata sebelum ayam drop</li>
+<li>Bagaimana teknologi membantu tanpa ribet</li>
+</ul>
+
+<p><b>Pertanyaannya sekarang bukan lagi:</b></p>
+
+<div class="highlight">
+“Apakah ini bekerja?”
+</div>
+
+<p>Tapi:</p>
+
+<div class="highlight">
+“Apakah saya mau mulai sekarang… atau nanti?”
+</div>
+
+<hr>
+
+<h3>⏳ Realita di Lapangan</h3>
+
+<p>Setiap hari tanpa sistem:</p>
+
+<ul>
+<li>ayam bisa stres tanpa terlihat</li>
+<li>penyakit datang tanpa peringatan</li>
+<li>kerugian terjadi diam-diam</li>
+</ul>
+
+<p><b>Dan biasanya kita baru sadar… saat sudah terlambat.</b></p>
+
+<hr>
+
+<h3>💡 Kabar Baiknya</h3>
+
+<p>Anda tidak perlu:</p>
+
+<ul>
+<li>bangun sistem dari nol</li>
+<li>pusing cari komponen satu-satu</li>
+<li>bingung merangkai sendiri</li>
+</ul>
+
+<div class="highlight">
+Kami sudah siapkan semuanya untuk Anda
+</div>
+
+<hr>
+
+<h2>📦 PAKET SIAP PAKAI</h2>
+
+<p><b>Tinggal pilih → pasang → langsung jalan</b></p>
+
+<div class="button" onclick="showClosing('basic')">🟢 Ambil Basic</div>
+<div class="button" onclick="showClosing('smart')">🟡 Ambil Smart</div>
+<div class="button" onclick="showClosing('pro')">🔴 Ambil Pro</div>
+
+<div id="closingBox" class="card" style="display:none; margin-top:20px;"></div>
+
+<script>
+function showClosing(type) {
+  let box = document.getElementById("closingBox");
+  box.style.display = "block";
+
+  if (type === "basic") {
+    box.innerHTML = `
+      <h3>🟢 BASIC</h3>
+      <p>Mulai dari yang paling sederhana</p>
+      <ul>
+        <li>Monitoring suhu & kelembaban</li>
+        <li>Notifikasi ke HP</li>
+      </ul>
+      <p><b>👉 Cocok untuk mulai hari ini</b></p>
+      <a class="button" href="https://kandang-rakyat-modern.netlify.app/">Order sesuai pilihanmu</a>
+    `;
+  }
+
+  if (type === "smart") {
+    box.innerHTML = `
+      <h3>🟡 SMART</h3>
+      <p>Naik level, lebih ringan kerja</p>
+      <ul>
+        <li>Kontrol otomatis</li>
+        <li>Ritme cahaya</li>
+      </ul>
+      <p><b>👉 Paling banyak dipilih</b></p>
+      <a class="button" href="https://kandang-rakyat-modern.netlify.app/">Order sesuai pilihanmu</a>
+    `;
+  }
+
+  if (type === "pro") {
+    box.innerHTML = `
+      <h3>🔴 PRO</h3>
+      <p>Sistem penuh seperti industri</p>
+      <ul>
+        <li>AI prediksi</li>
+        <li>Timbang otomatis</li>
+        <li>Dashboard lengkap</li>
+      </ul>
+      <p><b>👉 Untuk yang ingin serius berkembang</b></p>
+      <a class="button" href="https://kandang-rakyat-modern.netlify.app/">Order sesuai pilihanmu</a>
+    `;
+  }
+}
+</script>
+
+<hr>
+
+<h3>🧠 Ingat Ini</h3>
+
+<div class="highlight">
+Bukan soal teknologi mahal…  
+tapi soal keputusan untuk mulai
+</div>
+
+<p>Karena:</p>
+
+<ul>
+<li>peternak biasa menunggu masalah</li>
+<li>peternak cerdas membaca tanda lebih awal</li>
+</ul>
+
+<hr>
+
+<h3>🚀 Langkah Kecil Hari Ini</h3>
+
+<p>Tidak perlu langsung besar.</p>
+
+<p><b>Mulai dari satu kandang dulu.</b></p>
+
+<p>Rasakan:</p>
+
+<ul>
+<li>lebih tenang</li>
+<li>lebih terkontrol</li>
+<li>lebih percaya diri</li>
+</ul>
+
+<hr>
+
+<h2>🔥 Penutup</h2>
+
+<p>Teknologi ini bukan masa depan.</p>
+
+<p><b>Ini sudah bisa Anda pakai hari ini.</b></p>
+
+<div class="highlight">
+Dan mungkin…  
+ini keputusan kecil yang mengubah cara Anda beternak, berinvestasi selamanya
+</div>
+
+<div class="button" onclick="alert('Siap mulai? Hubungi sekarang!')" style="margin-top:20px;">
+👉 Saya Mau Mulai Sekarang
+</div>
+
+</div>
+
+<div class="ebook-content">
+
+<h2>💰 Hitung Balik Modal (ROI)</h2>
+
+<p><i>“Biar tidak nebak… kita hitung.”</i></p>
+
+<hr>
+
+<div class="card">
+
+<label>Jumlah Ayam:</label><br>
+<input type="number" id="ayam" value="1000"><br><br>
+
+<label>Estimasi Kematian Tanpa Sistem (%):</label><br>
+<input type="number" id="mati" value="5"><br><br>
+
+<label>Estimasi Kematian Dengan Sistem (%):</label><br>
+<input type="number" id="mati2" value="2"><br><br>
+
+<label>Harga Ayam per Ekor (Rp):</label><br>
+<input type="number" id="harga" value="35000"><br><br>
+
+<label>Harga Sistem (Rp):</label><br>
+<input type="number" id="alat" value="1500000"><br><br>
+
+<div class="button" onclick="hitungROI()">💡 Hitung Sekarang</div>
+
+</div>
+
+<div id="hasilROI" class="card" style="display:none;"></div>
+
+<script>
+function hitungROI() {
+
+  let ayam = parseFloat(document.getElementById("ayam").value);
+  let mati = parseFloat(document.getElementById("mati").value);
+  let mati2 = parseFloat(document.getElementById("mati2").value);
+  let harga = parseFloat(document.getElementById("harga").value);
+  let alat = parseFloat(document.getElementById("alat").value);
+
+  let rugiTanpa = ayam * (mati/100) * harga;
+  let rugiDengan = ayam * (mati2/100) * harga;
+
+  let hemat = rugiTanpa - rugiDengan;
+  let balikModal = alat / hemat;
+
+  let hasil = document.getElementById("hasilROI");
+  hasil.style.display = "block"; 
+  
+  let kesimpulan = "";
+
+if (hemat > alat) {
+  kesimpulan = "✅ Sistem ini balik modal dalam 1 periode";
+} else {
+  kesimpulan = "⏳ Balik modal butuh lebih dari 1 periode";
+}
+
+  hasil.innerHTML = `
+  <h3>📊 Hasil Perhitungan</h3>
+
+  <p>Kerugian TANPA sistem: <b style="color:red">Rp ${rugiTanpa.toLocaleString()}</b></p>
+  <p>Kerugian DENGAN sistem: <b style="color:green">Rp ${rugiDengan.toLocaleString()}</b></p>
+
+  <hr>
+
+  <p>💰 Penghematan: <b style="color:green">Rp ${hemat.toLocaleString()}</b></p>
+
+  <p>⏳ Estimasi Balik Modal: <b>${balikModal.toFixed(1)} periode</b></p>
+
+  <div class="highlight" style="margin-top:10px;">
+    ${kesimpulan}
+  </div>
+  
+  <div class="highlight">
+“Oh… ini bukan biaya. Ini investasi.”
+</div>
+
+    <div class="highlight">
+“Lah… ini malah nyelamatin uang”
+</div>
+
+<div class="highlight">
+      Semakin cepat Anda pasang sistem… semakin besar penghematan
+    </div>
+  `;
+}
+</script>
+
+</div>
+<a class="button" href=https://coba-simulasi.netlify.app/>
+Rasakan </a>
+<a class="button" href="https://kandang-rakyat-modern.netlify.app/" target="_blank">
+Upgrade Sekarang
+</a>
+
+<p>
+Kandang biasa…  
+atau sistem yang dirancang dengan sadar.
+</p>
+
+<p><b>Keputusan ada di kamu.</b></p>
+
+<ul>
+
+</ul>
+
+</body>
+</html>
